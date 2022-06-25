@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [data, setData] = useState([
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+    ]);
+
+    return (
+        <div
+            style={{
+                background: "#AD9D8F",
+                width: "max-content",
+                margin: "auto",
+                padding: 5,
+                borderRadius: 5,
+                marginTop: 10,
+            }}>
+
+            {data.map((row, oneIndex) => {
+                return (
+                    <div style={{display: "flex"}} key={oneIndex}>
+                        {row.map((digit, index) => (
+                            <Block num={digit} key={index}/>
+                        ))}
+                    </div>
+                );
+            })
+            }
+        </div>
+    );
 }
+
+const Block = ({num}) => {
+    return <div>{num}</div>
+};
+
 
 export default App;
