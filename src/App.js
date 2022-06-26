@@ -53,6 +53,10 @@ function App() {
     // Check Game-over
     // Reset
 
+    useEffect(()=>{
+        initialize();
+    },[])
+
     return (
         <div
             style={{
