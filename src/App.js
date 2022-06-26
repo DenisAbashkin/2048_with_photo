@@ -1,9 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {cloneDeep} from "lodash";
 
-<script src="lodash.js"></script>
-
-
 function App() {
     const [data, setData] = useState([
         [0, 0, 0, 0],
@@ -97,6 +94,8 @@ const Block = ({num}) => {
         </div>
     );
 };
+
+<script src="lodash.js"></script>
 
 const style = {
     blockStyle: {
